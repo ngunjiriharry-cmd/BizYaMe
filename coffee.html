@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee – Kilima Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#B8CBB9;
+  --ink:#2B221D;
+  --muted:#5D4A3E;
+  --accent:#6F4E37;
+  --accent-strong:#563B2D;
+  --card:#F3E8DC;
+  --line:#C7A98A;
+  --soft:#E7D4B7;
+  --shadow:0 24px 60px rgba(58,35,26,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+.logo{display:inline-flex;align-items:center;gap:12px;font:900 clamp(1.8rem,2.3vw,2.7rem)/1 "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.06em;color:var(--ink)}
+.brand-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(180deg,#f6eedf,#e8d7b7);border:1px solid var(--line);box-shadow:0 12px 20px rgba(59,39,28,.08)}
+.brand-mark svg{width:27px;height:27px;display:block;fill:var(--accent)}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;color:var(--ink);padding-bottom:4px;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus-visible{color:var(--accent);border-color:var(--accent)}
+nav a[aria-current="page"]{border-color:var(--accent)}
+.cart-link{display:inline-flex;align-items:center;gap:8px}
+.cart-badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700}
+.page-title{display:grid;grid-template-columns:1fr minmax(260px,.8fr);gap:32px;align-items:center;padding:44px 0 28px}
+.page-title h1{font-size:clamp(2.5rem,7vw,5rem);letter-spacing:-.06em}
+.page-title p{max-width:52ch;color:var(--muted);margin:16px 0 0}
+.page-title img{width:100%;aspect-ratio:1.7;object-fit:cover;border-radius:18px}
+section{padding:48px 0 64px;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;height:100%;box-shadow:0 8px 18px rgba(88,60,42,.06)}
+.card:hover{box-shadow:0 14px 28px rgba(88,60,42,.10)}
+.product-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin-bottom:20px}
+.product-figure{margin:0 0 20px}
+.product-figure .product-photo{margin-bottom:8px}
+.product-photo.french-press-photo{object-fit:contain;background:var(--soft)}
+.photo-credit{display:block;color:var(--muted);font-size:.75rem;line-height:1.4}
+.card h3{font-size:1.5rem;letter-spacing:-.03em;margin-bottom:10px}
+.card p{margin:0 0 16px;color:var(--muted)}
+.card p[hidden]{display:none}
+.card-row{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:auto}
+.price{font-weight:700;color:var(--accent)}
+.buy-btn{display:inline-block;padding:10px 16px;border:0;border-radius:999px;background:var(--accent);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.buy-btn:hover{filter:brightness(1.05)}
+.info-btn{padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.info-btn:hover{border-color:var(--accent);color:var(--accent)}
+.product-actions{display:flex;align-items:center;gap:10px}
+.status{min-height:24px;margin-top:18px;color:var(--accent-strong);font-weight:700}
+.more{margin-top:28px}
+.btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:transform .2s ease,filter .2s ease}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+footer{padding:28px 0 52px;border-top:1px solid var(--line);color:var(--muted);font-size:.96rem}
+@media(max-width:700px){.page-title{grid-template-columns:1fr;gap:18px}}
+@media(max-width:540px){nav{gap:12px}.card-row{flex-direction:column;align-items:flex-start}.btn{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="index.html" aria-label="Kilima Roasters home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <path d="M33.5 10c-9.2 0-16.5 7.3-16.5 16.5 0 10.5 8.4 18.4 16.7 25.1 2 1.9 4 5 5.1 8.4 1.1-3.4 3.1-6.5 5.1-8.4 8.3-6.7 16.7-14.6 16.7-25.1C50 17.3 42.7 10 33.5 10zm0 9.2c5.7 0 10.8 4.7 10.8 10.9 0 6.2-5.1 11-10.8 11S22.7 36.3 22.7 30.1c0-6.2 5.1-10.9 10.8-10.9zm-2.8 5.6h5.7v10.6h-5.7V24.8z"/>
+        </svg>
+      </span>
+      <span>Kilima Roasters</span>
+    </a>
+    <nav>
+      <a href="coffee.html" aria-current="page">Coffee</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <div>
+        <h1>Our coffee</h1>
+        <p>Roasted in small batches and shipped within 48 hours of roasting.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Coffee beans being prepared for a fresh brew">
+    </div>
+
+    <section>
+      <div class="grid">
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Freshly brewed Nyeri AA coffee" loading="lazy" decoding="async">
+          <h3>Nyeri AA</h3>
+          <p id="info-nyeri-aa" hidden>Blackcurrant, brown sugar, bright finish. Best as filter or pour-over.</p>
+          <div class="card-row">
+            <span class="price">KES 1,400 / 250g</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-nyeri-aa">Info</button>
+              <button class="buy-btn" type="button" data-id="nyeri-aa" data-name="Nyeri AA" data-price="1400">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Rich Kirinyaga Peaberry espresso" loading="lazy" decoding="async">
+          <h3>Kirinyaga Peaberry</h3>
+          <p id="info-kirinyaga-peaberry" hidden>Sweet and rounded with notes of orange and cocoa. Great for espresso.</p>
+          <div class="card-row">
+            <span class="price">KES 1,500 / 250g</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-kirinyaga-peaberry">Info</button>
+              <button class="buy-btn" type="button" data-id="kirinyaga-peaberry" data-name="Kirinyaga Peaberry" data-price="1500">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="A smooth cup made with Kilima House Blend" loading="lazy" decoding="async">
+          <h3>House Blend</h3>
+          <p id="info-house-blend" hidden>Smooth, nutty and easy to drink every day. Works in any brewer.</p>
+          <div class="card-row">
+            <span class="price">KES 1,100 / 250g</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-house-blend">Info</button>
+              <button class="buy-btn" type="button" data-id="house-blend" data-name="House Blend" data-price="1100">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee beans for the decaffeinated Kiambu roast" loading="lazy" decoding="async">
+          <h3>Decaf Kiambu</h3>
+          <p id="info-decaf-kiambu" hidden>Water-processed, so you keep the flavour without the caffeine. Notes of caramel and red apple.</p>
+          <div class="card-row">
+            <span class="price">KES 1,300 / 250g</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-decaf-kiambu">Info</button>
+              <button class="buy-btn" type="button" data-id="decaf-kiambu" data-name="Decaf Kiambu" data-price="1300">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Glass of chilled cold brew coffee" loading="lazy" decoding="async">
+          <h3>Cold Brew Bags</h3>
+          <p id="info-cold-brew-bags" hidden>Ten ready-to-steep bags. Add water, wait overnight, and pour over ice in the morning.</p>
+          <div class="card-row">
+            <span class="price">KES 1,200 / box of 10</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-cold-brew-bags">Info</button>
+              <button class="buy-btn" type="button" data-id="cold-brew-bags" data-name="Cold Brew Bags" data-price="1200">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Ceramic pour-over coffee brewing set" loading="lazy" decoding="async">
+          <h3>Ceramic Pour-Over Set</h3>
+          <p id="info-pour-over-set" hidden>A dripper and server for two cups, plus 40 paper filters.</p>
+          <div class="card-row">
+            <span class="price">KES 3,200</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-pour-over-set">Info</button>
+              <button class="buy-btn" type="button" data-id="pour-over-set" data-name="Ceramic Pour-Over Set" data-price="3200">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee tasting selection ready for gifting" loading="lazy" decoding="async">
+          <h3>Tasting Gift Box</h3>
+          <p id="info-tasting-gift-box" hidden>Three 100g bags (Nyeri AA, Kirinyaga Peaberry and House Blend) in a reusable box.</p>
+          <div class="card-row">
+            <span class="price">KES 1,900</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-tasting-gift-box">Info</button>
+              <button class="buy-btn" type="button" data-id="tasting-gift-box" data-name="Tasting Gift Box" data-price="1900">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="product-figure">
+            <img class="product-photo french-press-photo" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/French_press_2020.jpg/500px-French_press_2020.jpg" alt="Glass and stainless steel French press coffee maker" loading="lazy" decoding="async">
+            <figcaption class="photo-credit">Photo by <a href="https://commons.wikimedia.org/wiki/File:French_press_2020.jpg">KoeppiK / Wikimedia Commons</a>, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</figcaption>
+          </figure>
+          <h3>French Press</h3>
+          <p id="info-french-press" hidden>A classic glass press for brewing rich, full-bodied coffee at home.</p>
+          <div class="card-row">
+            <span class="price">KES 2,500 / each</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-french-press">Info</button>
+              <button class="buy-btn" type="button" data-id="french-press" data-name="French Press" data-price="2500">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee cups for serving freshly brewed coffee" loading="lazy" decoding="async">
+          <h3>Coffee Cups</h3>
+          <p id="info-coffee-cups" hidden>A matching set of two cups for sharing your favourite brew.</p>
+          <div class="card-row">
+            <span class="price">KES 1,200 / set of 2</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-coffee-cups">Info</button>
+              <button class="buy-btn" type="button" data-id="coffee-cups" data-name="Coffee Cups" data-price="1200">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Paper coffee filters for pour-over brewing" loading="lazy" decoding="async">
+          <h3>Coffee Filters</h3>
+          <p id="info-coffee-filters" hidden>Paper filters for clean, easy pour-over brewing at home.</p>
+          <div class="card-row">
+            <span class="price">KES 350 / pack of 40</span>
+            <div class="product-actions">
+              <button class="info-btn" type="button" aria-expanded="false" aria-controls="info-coffee-filters">Info</button>
+              <button class="buy-btn" type="button" data-id="coffee-filters" data-name="Coffee Filters" data-price="350">Add to cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div id="cartStatus" class="status" aria-live="polite"></div>
+      <p class="more"><a class="btn primary" href="cart.html">View cart</a></p>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Kilima Roasters. Demo website.</footer>
+</div>
+<script>
+const CART_KEY = 'kilimaCart';
+
+function getCart() {
+  try {
+    const items = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+    return Array.isArray(items) ? items : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveCart(items) {
+  localStorage.setItem(CART_KEY, JSON.stringify(items));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  const count = cart.reduce((total, item) => total + Number(item.qty || 0), 0);
+  document.querySelectorAll('[data-cart-count]').forEach((el) => {
+    el.textContent = count;
+    el.style.visibility = count > 0 ? 'visible' : 'hidden';
+  });
+}
+
+function addToCart(item) {
+  const cart = getCart();
+  const existing = cart.find(entry => entry.id === item.id);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ ...item, qty: 1 });
+  }
+
+  saveCart(cart);
+}
+
+document.querySelectorAll('.info-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    const description = document.getElementById(button.getAttribute('aria-controls'));
+    if (!description) return;
+
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isExpanded));
+    description.hidden = isExpanded;
+  });
+});
+
+document.querySelectorAll('.buy-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    const item = {
+      id: button.dataset.id,
+      name: button.dataset.name,
+      price: Number(button.dataset.price)
+    };
+    addToCart(item);
+    const status = document.getElementById('cartStatus');
+    if (status) {
+      status.textContent = item.name + ' added to cart.';
+    }
+  });
+});
+
+updateCartCount();
+</script>
+</body>
+</html>

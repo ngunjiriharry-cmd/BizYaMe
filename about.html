@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About – Kilima Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#B8CBB9;
+  --ink:#20352A;
+  --muted:#53665A;
+  --accent:#2B4FD8;
+  --card:#F5F4EB;
+  --line:#B7C8B5;
+  --soft:#E7EEE3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+.logo{display:inline-flex;align-items:center;gap:12px;font:900 clamp(1.8rem,2.3vw,2.7rem)/1 "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.06em;color:var(--ink)}
+.brand-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(180deg,#f6eedf,#e8d7b7);border:1px solid var(--line);box-shadow:0 12px 20px rgba(59,39,28,.08)}
+.brand-mark svg{width:27px;height:27px;display:block;fill:var(--accent)}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;color:var(--ink);padding-bottom:4px;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus-visible{color:var(--accent);border-color:var(--accent)}
+nav a[aria-current="page"]{border-color:var(--accent)}
+.cart-link{display:inline-flex;align-items:center;gap:8px}
+.cart-badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700}
+.page-title{padding:44px 0 16px}
+.page-title h1{font-size:clamp(2.6rem,7vw,4.8rem);letter-spacing:-.06em}
+section{padding:48px 0 64px;border-top:1px solid var(--line)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{margin:0 0 1em;color:var(--muted);max-width:56ch}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.feature{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.feature .icon{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px}
+.feature h3{font-size:1.25rem;margin-bottom:8px}
+.feature p{margin:0;color:var(--muted)}
+footer{padding:28px 0 52px;border-top:1px solid var(--line);color:var(--muted);font-size:.96rem}
+@media(max-width:700px){.about{grid-template-columns:1fr}nav{gap:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="index.html" aria-label="Kilima Roasters home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <path d="M33.5 10c-9.2 0-16.5 7.3-16.5 16.5 0 10.5 8.4 18.4 16.7 25.1 2 1.9 4 5 5.1 8.4 1.1-3.4 3.1-6.5 5.1-8.4 8.3-6.7 16.7-14.6 16.7-25.1C50 17.3 42.7 10 33.5 10zm0 9.2c5.7 0 10.8 4.7 10.8 10.9 0 6.2-5.1 11-10.8 11S22.7 36.3 22.7 30.1c0-6.2 5.1-10.9 10.8-10.9zm-2.8 5.6h5.7v10.6h-5.7V24.8z"/>
+        </svg>
+      </span>
+      <span>Kilima Roasters</span>
+    </a>
+    <nav>
+      <a href="coffee.html">Coffee</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title"><h1>About us</h1></div>
+
+    <section>
+      <div class="about">
+        <div>
+          <p>Kilima Roasters started in a small Nairobi garage with one roaster and a simple idea: Kenyan coffee should taste as good at home as it does at the farm.</p>
+          <p>We buy directly from cooperative growers, roast in modest batches, and print the roast date on every bag so you always know how fresh it is.</p>
+        </div>
+        <div>
+          <p>Our mission is simple: make exceptional coffee accessible, transparent, and enjoyable for everyday brewing.</p>
+          <p>Whether you’re brewing a quick filter at home or hosting friends for a weekend tasting, we aim to make each cup feel special.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What guides us</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon">🌱</div>
+          <h3>Traceable sourcing</h3>
+          <p>We work with farms and cooperatives we can trace back to the origin.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔥</div>
+          <h3>Thoughtful roasting</h3>
+          <p>Every roast is tuned to preserve sweetness, clarity, and character in the cup.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h3>Long-term relationships</h3>
+          <p>We focus on repeatable quality and a transparent, trusted supply chain.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Kilima Roasters. Demo website.</footer>
+</div>
+<script>
+const CART_KEY = 'kilimaCart';
+function getCart() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch { return []; }
+}
+function updateCartCount() {
+  const cart = getCart();
+  const count = cart.reduce((total, item) => total + Number(item.qty || 0), 0);
+  document.querySelectorAll('[data-cart-count]').forEach((el) => {
+    el.textContent = count;
+    el.style.visibility = count > 0 ? 'visible' : 'hidden';
+  });
+}
+updateCartCount();
+</script>
+</body>
+</html>
